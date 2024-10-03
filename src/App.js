@@ -16,21 +16,21 @@ function App() {
         .then(data => {
           setCountries([...data, 'Select Country']);
         })
-        .catch(error => console.log(error));
+        .catch(error => console.error(error));
   }
 
   let fetchStates = () => {
     fetch(`https://crio-location-selector.onrender.com/country=${selectedCountry}/states`)
         .then(res => res.json())
         .then(data => setStates([...data, 'Select State']))
-        .catch(error => console.log(error));
+        .catch(error => console.error(error));
   }
 
   let fetchCities = (countryName, stateName) => {
     fetch(`https://crio-location-selector.onrender.com/country=${selectedCountry}/state=${selectedState}/cities`)
         .then(res => res.json())
         .then(data => setCities([...data, 'Select City']))
-        .catch(error => console.log(error));
+        .catch(error => console.error(error));
   }
 
   useEffect(() => {fetchCountries(); fetchStates(); fetchCities();}, [selectedCountry, selectedState, selectedCity]);
