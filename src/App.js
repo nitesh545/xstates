@@ -48,7 +48,7 @@ function App() {
             {cities.map((city, index) => (<option key={index} value={city}>{city}</option>))}
         </select>
       {
-        selectedCity !== 'Select City' && (<h2>You Selected {selectedCity}, {selectedState}, {selectedCountry}</h2>)
+        selectedCity !== 'Select City' && (<h2>You selected {selectedCity}, {selectedState}, {selectedCountry}</h2>)
       }
     </div>
   );
